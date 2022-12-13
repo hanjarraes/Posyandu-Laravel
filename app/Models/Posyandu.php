@@ -16,10 +16,10 @@ class Posyandu extends Model
             ->orWhere('alamat_lengkap', 'like', '%'.$search.'%');
         });
 
-        // $query->when($filters['provinsi'] ?? false, function($query, $provinsi){
-        //     return $query ->whereHas('provinsi', function($query) use ($provinsi){
-        //         $query->where('provinsi', $provinsi);
-        //     });
-        // });
+        $query->when($filters['provinsi'] ?? false, fn($query, $provinsi) =>
+            $query->whereHas('provinsi', fn($query) =>
+                $query->where('id_provinsi', $provinsi)
+            )
+        );
     }
 }
