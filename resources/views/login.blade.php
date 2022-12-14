@@ -24,7 +24,7 @@
                 <label>Password</label>
             </div>
             <div class="d-flex justify-content-between">
-                <a href="#">
+                <a href="/dashboard">
                     <span></span>
                     <span></span>
                     <span></span>

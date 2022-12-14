@@ -95,7 +95,7 @@
                                             <p class="card__snippet">{{ $data->alamat_lengkap }}</p>
                                             <p class="card__snippet">{{ $data->jam_operasi }}</p>
                                             <button type="button" class="card__button" data-bs-toggle="modal"
-                                                data-bs-target="#ModalDetail{{ $data->id }}">Read more</a>
+                                                data-bs-target="#ModalDetail{{ $data->id }}">Read more</button>
                                         </figcaption>
                                     </figure>
                                 </div>
