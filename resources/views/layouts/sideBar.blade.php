@@ -12,47 +12,52 @@
 </head>
 
 <body>
-    <main>
-        <div class="d-flex flex-column flex-shrink-0 bg-light custom-sidebar">
-            <a href="/dashboard" class="d-flex justify-content-center" style="font-size: 28px;" title="Icon-only"
-                data-bs-toggle="tooltip" data-bs-placement="right">
-                <img src="img/output-onlinegiftools.gif" alt="icon" width="100">
-            </a>
-            <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
-                <li class="nav-item">
-                    <a href="/dashboard" class="nav-link {{ $title == 'dasboard' ? 'active' : '' }}  py-3 border-bottom"
-                        style="font-size: 28px;" aria-current="page" title="Home" data-bs-toggle="tooltip"
-                        data-bs-placement="right">
-                        <i class="ri-home-3-line"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="/posyanduSummary"
-                        class="nav-link py-3 border-bottom {{ $title == 'posyanduSummary' ? 'active' : '' }} "
-                        title="Dashboard" style="font-size: 28px;" data-bs-toggle="tooltip" data-bs-placement="right">
-                        <i class="ri-hospital-line"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link py-3 border-bottom {{ $title == 'home' ? 'active' : '' }} "
-                        title="Orders" style="font-size: 28px;" data-bs-toggle="tooltip" data-bs-placement="right">
-                        <i class="ri-user-line"></i>
-                    </a>
-                </li>
-            </ul>
-            <div class="border-top d-flex justify-content-center">
-                <a href="/" class="nav-link py-3" title="Dashboard" style="font-size: 28px;"
+    @auth
+        <main>
+            <div class="d-flex flex-column flex-shrink-0 bg-light custom-sidebar">
+                <a href="/dashboard" class="d-flex justify-content-center" style="font-size: 28px;" title="Icon-only"
                     data-bs-toggle="tooltip" data-bs-placement="right">
-                    <i class="ri-logout-box-line"></i>
+                    <img src="img/output-onlinegiftools.gif" alt="icon" width="100">
                 </a>
+                <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+                    <li class="nav-item">
+                        <a href="/dashboard" class="nav-link {{ $title == 'dasboard' ? 'active' : '' }}  py-3 border-bottom"
+                            style="font-size: 28px;" aria-current="page" title="Home" data-bs-toggle="tooltip"
+                            data-bs-placement="right">
+                            <i class="ri-home-3-line"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/posyanduSummary"
+                            class="nav-link py-3 border-bottom {{ $title == 'posyanduSummary' ? 'active' : '' }} "
+                            title="Dashboard" style="font-size: 28px;" data-bs-toggle="tooltip" data-bs-placement="right">
+                            <i class="ri-hospital-line"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link py-3 border-bottom {{ $title == 'home' ? 'active' : '' }} "
+                            title="Orders" style="font-size: 28px;" data-bs-toggle="tooltip" data-bs-placement="right">
+                            <i class="ri-user-line"></i>
+                        </a>
+                    </li>
+                </ul>
+                <div class="border-top d-flex justify-content-center">
+                    <form action="/logout" method="post">
+                        @csrf
+                        <button type="submit" class="nav-link py-3 logoutBtn" data-bs-toggle="tooltip"
+                            data-bs-placement="right">
+                            <i class="ri-logout-box-line"></i>
+                        </button>
+                    </form>
+                </div>
             </div>
-        </div>
 
-        @yield('container')
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+            @yield('container')
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+    @endauth
 </body>
 
 </html>

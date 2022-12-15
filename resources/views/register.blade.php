@@ -8,17 +8,24 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+    <title>Register</title>
 </head>
 
 <body>
     <div class="login-box">
-        <h2>Login</h2>
-        <form action="/login" method="post">
+        <h2>Register</h2>
+        <form action="/register" method="post">
             @csrf
             <div class="user-box">
+                <input type="text" name="name" required="" class="" value="{{ old('name') }}">
+                <label>Username</label>
+            </div>
+            @error('name')
+                <div class="validasiError">{{ $message }}</div>
+            @enderror
+            <div class="user-box">
                 <input type="text" name="email" required="" value="{{ old('email') }}">
-                <label>Email</label>
+                <label>Email Address</label>
             </div>
             @error('email')
                 <div class="validasiError">{{ $message }}</div>
@@ -30,11 +37,6 @@
             @error('password')
                 <div class="validasiError">{{ $message }}</div>
             @enderror
-            <div class="d-flex justify-content-end">
-                <a class="linkRegister" href="/register">
-                    Register
-                </a>
-            </div>
             <div class="d-flex justify-content-between">
                 <div class="btnCustom">
                     <span></span>
@@ -46,7 +48,7 @@
                     </button>
                 </div>
                 <div class="btnCustom">
-                    <a href="/">
+                    <a href="/login">
                         <i class="ri-arrow-go-back-line"></i>
                     </a>
                 </div>

@@ -21,6 +21,13 @@ main {
     overflow-y: hidden;
 }
 
+.logoutBtn {
+    font-size: 28px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
 .b-example-divider {
     flex-shrink: 0;
     width: 1.5rem;
