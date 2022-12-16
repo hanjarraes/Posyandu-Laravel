@@ -69,4 +69,10 @@ class PosyanduController extends Controller
         Posyandu::create($validatedData);
         return redirect('/posyanduSummary')->with('success', 'Data Berhasil Ditambah!!');
     }
+
+    public function destroy(Posyandu $posyandu)
+    {
+        Posyandu::destroy($posyandu->id);
+        return redirect('/posyanduSummary')->with('success', 'Data Berhasil Dihapus!!');
+    }
 }

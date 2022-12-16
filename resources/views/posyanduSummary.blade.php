@@ -40,11 +40,18 @@
                         <td>{{ $data->no_telp }}</td>
                         <td>{{ $data->kader }}</td>
                         <td>{{ $data->jam_operasi }}</td>
-                        <td>
+                        <td class="d-flex">
                             <i class="ri-eye-line" data-bs-toggle="modal"
                                 data-bs-target="#ModalDetail{{ $data->id }}"></i>
-                            <i class="ri-pencil-line"></i>
-                            <i class="ri-delete-bin-5-line"></i>
+                            <i class="ri-pencil-line ml-3"></i>
+                            <form action="/posyanduSummary/{{ $data->id }}" method="post">
+                                @method('delete')
+                                @csrf
+                                <button type="submit" style="background-color: transparent;border: none;outline: none;"
+                                    onclick="return confirm('are you sure?')">
+                                    <i class="ri-delete-bin-5-line"></i>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                     <div class="modal fade" id="ModalDetail{{ $data->id }}" tabindex="-1"
