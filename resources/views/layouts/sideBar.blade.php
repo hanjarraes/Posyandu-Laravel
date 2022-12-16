@@ -34,12 +34,12 @@
                             <i class="ri-hospital-line"></i>
                         </a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="#" class="nav-link py-3 border-bottom {{ $title == 'home' ? 'active' : '' }} "
                             title="Orders" style="font-size: 28px;" data-bs-toggle="tooltip" data-bs-placement="right">
                             <i class="ri-user-line"></i>
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
                 <div class="border-top d-flex justify-content-center">
                     <form action="/logout" method="post">

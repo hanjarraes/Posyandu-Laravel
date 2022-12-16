@@ -2,16 +2,22 @@
 
 @section('container')
     <div class="tableCustom">
-        <div style="width: 500px;">
-            <form action="/posyanduSummary" method="get">
-                <div class="input-group">
-                    <div class="form-control searchInputIcon">
-                        <i class="ri-search-line"></i>
-                        <input type="text" placeholder="Search Your Posyandu ....." aria-label="Search"
-                            aria-describedby="search-addon" name="search" value="{{ request('search') }}" />
+        @if (session()->has('success'))
+            <div class="alert alert-primary">{{ session('success') }}</div>
+        @endif
+        <div class="d-flex justify-content-between align-items-start">
+            <div style="width: 500px;">
+                <form action="/posyanduSummary" method="get">
+                    <div class="input-group">
+                        <div class="form-control searchInputIcon">
+                            <i class="ri-search-line"></i>
+                            <input type="text" placeholder="Search Your Posyandu ....." aria-label="Search"
+                                aria-describedby="search-addon" name="search" value="{{ request('search') }}" />
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
+            <a href="createSummary" class="btn btnCreateData">Create New Data</a>
         </div>
         <table class="table table-striped">
             <thead>

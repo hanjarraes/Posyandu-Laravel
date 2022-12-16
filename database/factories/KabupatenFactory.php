@@ -18,7 +18,6 @@ class KabupatenFactory extends Factory
     {
         return [
             'kabupaten' => $this->faker->unique()->city(),
-            'id_camat' => 1
         ];
     }
 }

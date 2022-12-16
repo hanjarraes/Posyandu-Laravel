@@ -25,6 +25,8 @@ Route::get('/dashboard', function () {
 })->middleware('auth');
 
 Route::get('/posyanduSummary', [PosyanduController::class, 'summary']);
+Route::get('/createSummary', [PosyanduController::class, 'create']);
+Route::post('/createSummary',  [PosyanduController::class, 'store']);
 
 // Route::get('/about', function () {
 //     return view('about', [

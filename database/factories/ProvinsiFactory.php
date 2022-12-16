@@ -18,7 +18,6 @@ class ProvinsiFactory extends Factory
     {
         return [
             'provinsi' => $this->faker->unique()->state(),
-            'id_kabupaten' => 1
         ];
     }
 }

@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('posyandus', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_provinsi');
+            $table->foreignId('id_kabupaten');
+            $table->foreignId('id_kecamatan');
             $table->foreignId('id_user');
             $table->string('nama_posyandu');
             $table->string('email')->unique();

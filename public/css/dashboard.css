@@ -28,6 +28,24 @@ main {
     background: transparent;
 }
 
+.btnCreateData {
+    background-color: #4aa5db !important;
+    color: #fff !important;
+    border: 1px solid #4aa5db !important;
+    font-weight: 500;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 10px 5px 10px 8px;
+}
+
+.btnCreateData:hover {
+    color: #4aa5db !important;
+    background-color: #fff !important;
+    border: 1px solid #4aa5db !important;
+}
+
 .b-example-divider {
     flex-shrink: 0;
     width: 1.5rem;
@@ -152,6 +170,37 @@ main {
     .bd-placeholder-img-lg {
         font-size: 3.5rem;
     }
+}
+
+.inputFields {
+    border-radius: 10px !important;
+    display: flex !important;
+    width: 100%;
+    height: 50px;
+    padding-left: 20px;
+    font-size: 20px;
+}
+.inputFieldsArea {
+    border-radius: 10px !important;
+    display: flex !important;
+    width: 100%;
+    height: 166px;
+    padding-left: 20px;
+    font-size: 20px;
+    resize: none;
+}
+
+.titleField {
+    font-size: 24px;
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+
+.validasiError {
+    color: #e17a7a;
+    font-weight: 400;
+    margin-top: -14px;
+    padding-bottom: 10px;
 }
 
 .searchInputIcon {

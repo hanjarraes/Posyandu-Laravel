@@ -17,38 +17,53 @@
                                     aria-describedby="search-addon" name="search" value="{{ request('search') }}" />
                             </div>
                         </div>
-                        {{-- <div class="group-dropdown">
+                        <div class="group-dropdown">
                             <select type="text" class="desainDropdown mx-2" id="provinsi" name="provinsi"
                                 placeholder="Provinsi">
                                 <option value="">Provinsi</option>
                                 @foreach ($provinsiData as $dataProvinsi)
-                                    <option value="{{ $dataProvinsi->provinsi }}">{{ $dataProvinsi->provinsi }}</option>
+                                    @if (old('id_provinsi') == $dataProvinsi->id)
+                                        <option value="{{ $dataProvinsi->id }}" selected>{{ $dataProvinsi->provinsi }}
+                                        </option>
+                                    @else
+                                        <option value="{{ $dataProvinsi->id }}">{{ $dataProvinsi->provinsi }}</option>
+                                    @endif
                                 @endforeach
                             </select>
                             <select type="text" class="desainDropdown mx-2" id="kabupaten" name="kabupaten"
                                 placeholder="Kabupaten">
                                 <option value="">Kabupaten</option>
                                 @foreach ($kabupatenData as $dataKabupaten)
-                                    <option value="{{ $dataKabupaten->kabupaten }}">{{ $dataKabupaten->kabupaten }}
-                                    </option>
+                                    @if (old('id_kabupaten') == $dataKabupaten->id)
+                                        <option value="{{ $dataKabupaten->id }}" selected>{{ $dataKabupaten->kabupaten }}
+                                        </option>
+                                    @else
+                                        <option value="{{ $dataKabupaten->id }}">{{ $dataKabupaten->kabupaten }}
+                                        </option>
+                                    @endif
                                 @endforeach
                             </select>
                             <select type="text" class="desainDropdown mx-2" id="kecamatan" name="kecamatan"
                                 placeholder="Kecamatan">
                                 <option value="">Kecamatan</option>
                                 @foreach ($kecamatanData as $dataKecamatan)
-                                    <option value="{{ $dataKecamatan->kecamatan }}">{{ $dataKecamatan->kecamatan }}
-                                    </option>
+                                    @if (old('id_kecamatan') == $dataKecamatan->id)
+                                        <option value="{{ $dataKecamatan->id }}" selected>{{ $dataKecamatan->kecamatan }}
+                                        </option>
+                                    @else
+                                        <option value="{{ $dataKecamatan->id }}">{{ $dataKecamatan->kecamatan }}
+                                        </option>
+                                    @endif
                                 @endforeach
                             </select>
-                        </div> --}}
+                        </div>
                     </div>
                 </div>
             </form>
         @else
             <form action="/">
                 <div style="height: 90vh;">
-                    <div style="width: 550px;" class="pt-2">
+                    <div style="width: 1050px;" class="pt-2">
                         <div class="d-flex align-items-end">
                             <div class="input-group pe-3">
                                 <div class="form-control searchInputIcon" style="z-index: 100;">
@@ -57,31 +72,48 @@
                                         aria-describedby="search-addon" name="search" value="{{ request('search') }}" />
                                 </div>
                             </div>
-                            {{-- <div class="group-dropdown">
+                            <div class="group-dropdown">
                                 <select type="text" class="desainDropdown mx-2" id="provinsi" name="provinsi"
                                     placeholder="Provinsi">
                                     <option value="">Provinsi</option>
                                     @foreach ($provinsiData as $dataProvinsi)
-                                        <option value="{{ $dataProvinsi->provinsi }}">{{ $dataProvinsi->provinsi }}</option>
+                                        @if (old('id_provinsi') == $dataProvinsi->id)
+                                            <option value="{{ $dataProvinsi->id }}" selected>{{ $dataProvinsi->provinsi }}
+                                            </option>
+                                        @else
+                                            <option value="{{ $dataProvinsi->id }}">{{ $dataProvinsi->provinsi }}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                                 <select type="text" class="desainDropdown mx-2" id="kabupaten" name="kabupaten"
                                     placeholder="Kabupaten">
                                     <option value="">Kabupaten</option>
                                     @foreach ($kabupatenData as $dataKabupaten)
-                                        <option value="{{ $dataKabupaten->kabupaten }}">{{ $dataKabupaten->kabupaten }}
-                                        </option>
+                                        @if (old('id_kabupaten') == $dataKabupaten->id)
+                                            <option value="{{ $dataKabupaten->id }}" selected>
+                                                {{ $dataKabupaten->kabupaten }}
+                                            </option>
+                                        @else
+                                            <option value="{{ $dataKabupaten->id }}">{{ $dataKabupaten->kabupaten }}
+                                            </option>
+                                        @endif
                                     @endforeach
                                 </select>
                                 <select type="text" class="desainDropdown mx-2" id="kecamatan" name="kecamatan"
                                     placeholder="Kecamatan">
                                     <option value="">Kecamatan</option>
                                     @foreach ($kecamatanData as $dataKecamatan)
-                                        <option value="{{ $dataKecamatan->kecamatan }}">{{ $dataKecamatan->kecamatan }}
-                                        </option>
+                                        @if (old('id_kecamatan') == $dataKecamatan->id)
+                                            <option value="{{ $dataKecamatan->id }}" selected>
+                                                {{ $dataKecamatan->kecamatan }}
+                                            </option>
+                                        @else
+                                            <option value="{{ $dataKecamatan->id }}">{{ $dataKecamatan->kecamatan }}
+                                            </option>
+                                        @endif
                                     @endforeach
                                 </select>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
                     <div class="d-flex justify-content-around flex-wrap pt-3">

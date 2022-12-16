@@ -28,6 +28,8 @@ class PosyanduFactory extends Factory
             'jam_operasi' => $this->faker->dayOfWeek(),
             'map' => 'https://goo.gl/maps/LLBEATB7LkQUy7xp9',
             'id_provinsi' => 1,
+            'id_kabupaten' => 1,
+            'id_kecamatan' => 1,
             'id_user' => 1
         ];
     }

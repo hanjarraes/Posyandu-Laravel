@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('kabupatens', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_camat');
             $table->string('kabupaten')->unique();
             $table->timestamps();
         });
