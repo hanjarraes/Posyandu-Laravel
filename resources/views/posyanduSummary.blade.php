@@ -22,7 +22,6 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
                     <th scope="col">Nama Posyandu</th>
                     <th scope="col">Email</th>
                     <th scope="col">no Telepon</th>
@@ -34,7 +33,6 @@
             <tbody>
                 @foreach ($posyandu as $data)
                     <tr>
-                        <th scope="row">{{ $data->id }}</th>
                         <td>{{ $data->nama_posyandu }}</td>
                         <td>{{ $data->email }}</td>
                         <td>{{ $data->no_telp }}</td>
@@ -43,9 +41,12 @@
                         <td class="d-flex">
                             <i class="ri-eye-line" data-bs-toggle="modal"
                                 data-bs-target="#ModalDetail{{ $data->id }}"></i>
-                            <i class="ri-pencil-line ml-3"></i>
-                            <form action="/posyanduSummary/{{ $data->id }}" method="post">
-                                @method('delete')
+                            <form action="editData/{{ $data->id }}">
+                                <button type="submit" style="background-color: transparent;border: none;outline: none;">
+                                    <i class="ri-pencil-line ml-3"></i>
+                                </button>
+                            </form>
+                            <form action="/posyanduSummary/{{ $data->id }}" method="get">
                                 @csrf
                                 <button type="submit" style="background-color: transparent;border: none;outline: none;"
                                     onclick="return confirm('are you sure?')">

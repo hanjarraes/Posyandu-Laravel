@@ -7,7 +7,7 @@ use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', [PosyanduController::class, 'index']);
+Route::get('/', [PosyanduController::class, 'index'])->middleware('guest');;;
 
 Route::get('/login',  [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login',  [LoginController::class, 'auth']);
@@ -25,6 +25,9 @@ Route::get('/dashboard', function () {
 })->middleware('auth');
 
 Route::get('/posyanduSummary', [PosyanduController::class, 'summary']);
+Route::get('/posyanduSummary/{id}', [PosyanduController::class, 'destroy']);
+Route::get('/editData/{id}', [PosyanduController::class, 'edit']);
+Route::post('/editData/{id}', [PosyanduController::class, 'update']);
 Route::get('/createSummary', [PosyanduController::class, 'create']);
 Route::post('/createSummary',  [PosyanduController::class, 'store']);
 

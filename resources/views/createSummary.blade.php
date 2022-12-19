@@ -38,7 +38,7 @@
                     <div class="pb-3">
                         <div class="titleField">No Handphone</div>
                         <div>
-                            <input type="number" class="inputFields" name="no" required value="{{ old('no') }}" />
+                            <input type="text" class="inputFields" name="no" required value="{{ old('no') }}" />
                         </div>
                     </div>
                     @error('no')
@@ -47,7 +47,7 @@
                     <div class="pb-3">
                         <div class="titleField">No Telepon</div>
                         <div>
-                            <input type="number" class="inputFields" name="no_telp" required
+                            <input type="text" class="inputFields" name="no_telp" required
                                 value="{{ old('no_telp') }}" />
                         </div>
                     </div>
@@ -150,7 +150,7 @@
                         <div class="validasiError">{{ $message }}</div>
                     @enderror
                     <div class="pb-3">
-                        <div class="titleField">Ling Google Map</div>
+                        <div class="titleField">Link Google Map</div>
                         <div>
                             <input type="text" class="inputFields" name="map" required
                                 value="{{ old('map') }}" />

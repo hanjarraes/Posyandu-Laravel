@@ -48,6 +48,17 @@ class PosyanduController extends Controller
         ]);
     }
 
+    public function edit($id)
+    {
+        return view('editSummary', [
+            "title" => "Edit Posyandu",
+            "idEdit" => Posyandu::where('id', $id)->first(),
+            "provinsiData" => Provinsi::latest()->get(),
+            "kabupatenData" => Kabupaten::latest()->get(),
+            "kecamatanData" => Kecamatan::latest()->get(),
+        ]);
+    }
+
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -70,9 +81,31 @@ class PosyanduController extends Controller
         return redirect('/posyanduSummary')->with('success', 'Data Berhasil Ditambah!!');
     }
 
-    public function destroy(Posyandu $posyandu)
+    public function update(Request $request, $id)
     {
-        Posyandu::destroy($posyandu->id);
+        $validatedData = $request->validate([
+            'id_provinsi' => ['required'],
+            'id_kabupaten' => ['required'],
+            'id_kecamatan' => ['required'],
+            'nama_posyandu' => ['required', 'max:255'],
+            'email' => ['required', 'email:dns'],
+            'no_telp' => ['required', 'max:14'],
+            'no' => ['required', 'max:14'],
+            'kader' => ['required', 'max:255'],
+            'alamat_lengkap' => ['required'],
+            'img' => ['required'],
+            'jam_operasi' => ['required'],
+            'map' => ['required'],
+            'keterangan' => ['required'],
+        ]);
+        $validatedData['id_user'] = auth()->user()->id;
+        Posyandu::where('id', $id)->update($validatedData);
+        return redirect('/posyanduSummary')->with('success', 'Data Berhasil DiEdit!!');
+    }
+
+    public function destroy($id)
+    {
+        Posyandu::where('id', $id)->delete();
         return redirect('/posyanduSummary')->with('success', 'Data Berhasil Dihapus!!');
     }
 }
